@@ -15,6 +15,12 @@ import {
   Heart,
   ChevronDown,
 } from "lucide-react";
+import exemplo1 from "@/assets/exemplo-1.jpg";
+import exemplo2 from "@/assets/exemplo-2.jpg";
+import exemplo3 from "@/assets/exemplo-3.jpg";
+import exemplo4 from "@/assets/exemplo-4.jpg";
+import exemplo5 from "@/assets/exemplo-5.jpg";
+import exemplo6 from "@/assets/exemplo-6.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
