@@ -15,6 +15,12 @@ import {
   Heart,
   ChevronDown,
 } from "lucide-react";
+import exemplo1 from "@/assets/exemplo-1.jpg";
+import exemplo2 from "@/assets/exemplo-2.jpg";
+import exemplo3 from "@/assets/exemplo-3.jpg";
+import exemplo4 from "@/assets/exemplo-4.jpg";
+import exemplo5 from "@/assets/exemplo-5.jpg";
+import exemplo6 from "@/assets/exemplo-6.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -230,12 +236,17 @@ function Examples() {
         encontros.
       </p>
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {Array.from({ length: 6 }).map((_, i) => (
+        {[exemplo1, exemplo2, exemplo3, exemplo4, exemplo5, exemplo6].map((src, i) => (
           <div
             key={i}
-            className="aspect-[3/4] rounded-2xl border border-border bg-gradient-to-br from-card to-secondary flex items-center justify-center shadow-sm"
+            className="aspect-[3/4] rounded-2xl border border-border overflow-hidden shadow-sm"
           >
-            <BookOpen className="h-10 w-10 text-primary/60" />
+            <img
+              src={src}
+              alt={`Exemplo de dinâmica cristã ${i + 1}`}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
         ))}
       </div>
