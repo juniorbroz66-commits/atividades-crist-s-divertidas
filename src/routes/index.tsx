@@ -14,6 +14,8 @@ import {
   Check,
   Heart,
   ChevronDown,
+  Clock,
+  X,
 } from "lucide-react";
 import exemplo1 from "@/assets/exemplo-1.jpg";
 import exemplo2 from "@/assets/exemplo-2.jpg";
@@ -44,8 +46,10 @@ export const Route = createFileRoute("/")({
 
 const CHECKOUT_MAIN = "#oferta";
 const CHECKOUT_SECONDARY = "#oferta";
+const CHECKOUT_LIGHTNING = "#oferta";
 
 function Index() {
+  const [showOffer, setShowOffer] = useState(false);
   const today = new Date().toLocaleDateString("pt-BR");
 
   return (
@@ -56,12 +60,13 @@ function Index() {
       <Examples />
       <Benefits />
       <Bonuses />
-      <Pricing />
+      <Pricing onOpenOffer={() => setShowOffer(true)} />
       <Guarantee />
       <Testimonials />
       <About />
       <FAQ />
       <Footer />
+      {showOffer && <LightningOffer onClose={() => setShowOffer(false)} />}
     </div>
   );
 }
@@ -337,7 +342,7 @@ function Bonuses() {
   );
 }
 
-function Pricing() {
+function Pricing({ onOpenOffer }: { onOpenOffer: () => void }) {
   return (
     <section id="oferta" className="px-4 py-16 max-w-5xl mx-auto scroll-mt-10">
       <h2 className="text-3xl sm:text-4xl font-black text-center mb-10">
@@ -358,12 +363,12 @@ function Pricing() {
             <li className="flex gap-2"><Check className="h-4 w-4 text-primary mt-0.5" /> Acesso Digital e Vitalício</li>
             <li className="flex gap-2"><Check className="h-4 w-4 text-primary mt-0.5" /> Garantia de 30 dias</li>
           </ul>
-          <a
-            href={CHECKOUT_MAIN}
-            className="mt-8 block text-center rounded-full bg-secondary text-secondary-foreground font-bold py-3 hover:bg-secondary/80 transition"
+          <button
+            onClick={onOpenOffer}
+            className="mt-8 w-full block text-center rounded-full bg-secondary text-secondary-foreground font-bold py-3 hover:bg-secondary/80 transition"
           >
             QUERO O PLANO BÁSICO
-          </a>
+          </button>
         </div>
 
         {/* Premium / Secondary Offer */}
@@ -380,9 +385,9 @@ function Pricing() {
           </p>
 
           <div className="mt-5">
-            <p className="text-sm line-through opacity-80">Valor Total R$ 97,90</p>
+            <p className="text-sm line-through opacity-80">De R$ 97,90</p>
             <div className="flex items-baseline gap-2">
-              <span className="text-5xl font-black">R$12,70</span>
+              <span className="text-5xl font-black">R$19,90</span>
             </div>
             <p className="text-sm opacity-90 mt-1">Hoje, pagamento único</p>
           </div>
@@ -422,6 +427,62 @@ function Pricing() {
         <span className="flex items-center gap-2"><Rocket className="h-4 w-4 text-primary" /> Acesso Imediato</span>
       </div>
     </section>
+  );
+}
+
+function LightningOffer({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative w-full max-w-md rounded-3xl bg-card p-6 text-center shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
+          aria-label="Fechar"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <div className="flex items-center justify-center gap-2 text-primary">
+          <Clock className="h-6 w-6" />
+          <span className="text-lg font-black uppercase tracking-wide">ESPERE!</span>
+        </div>
+
+        <h3 className="mt-4 text-2xl font-black leading-tight">
+          Que tal levar o Plano Premium por um preço exclusivo?
+        </h3>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          Aproveite agora: leve o Plano Premium com{" "}
+          <strong className="text-foreground">+250 Dinâmicas + 6 bônus exclusivos</strong>{" "}
+          por apenas:
+        </p>
+
+        <p className="mt-4 text-sm text-muted-foreground line-through">De R$ 19,90</p>
+        <div className="mt-1 text-6xl font-black text-primary">R$10,00</div>
+
+        <a
+          href={CHECKOUT_LIGHTNING}
+          className="mt-6 block w-full rounded-full bg-primary py-4 text-lg font-black text-primary-foreground shadow-lg shadow-primary/30 hover:scale-[1.02] transition-transform"
+        >
+          QUERO O PLANO PREMIUM POR R$10,00
+        </a>
+
+        <button
+          onClick={onClose}
+          className="mt-4 text-sm text-muted-foreground underline hover:text-foreground"
+        >
+          Não, obrigado. Quero apenas o plano básico.
+        </button>
+      </div>
+    </div>
   );
 }
 
