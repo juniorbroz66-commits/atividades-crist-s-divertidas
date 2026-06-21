@@ -342,7 +342,7 @@ function Bonuses() {
   );
 }
 
-function Pricing() {
+function Pricing({ onOpenOffer }: { onOpenOffer: () => void }) {
   return (
     <section id="oferta" className="px-4 py-16 max-w-5xl mx-auto scroll-mt-10">
       <h2 className="text-3xl sm:text-4xl font-black text-center mb-10">
@@ -363,12 +363,12 @@ function Pricing() {
             <li className="flex gap-2"><Check className="h-4 w-4 text-primary mt-0.5" /> Acesso Digital e Vitalício</li>
             <li className="flex gap-2"><Check className="h-4 w-4 text-primary mt-0.5" /> Garantia de 30 dias</li>
           </ul>
-          <a
-            href={CHECKOUT_MAIN}
-            className="mt-8 block text-center rounded-full bg-secondary text-secondary-foreground font-bold py-3 hover:bg-secondary/80 transition"
+          <button
+            onClick={onOpenOffer}
+            className="mt-8 w-full block text-center rounded-full bg-secondary text-secondary-foreground font-bold py-3 hover:bg-secondary/80 transition"
           >
             QUERO O PLANO BÁSICO
-          </a>
+          </button>
         </div>
 
         {/* Premium / Secondary Offer */}
@@ -385,9 +385,9 @@ function Pricing() {
           </p>
 
           <div className="mt-5">
-            <p className="text-sm line-through opacity-80">Valor Total R$ 97,90</p>
+            <p className="text-sm line-through opacity-80">De R$ 97,90</p>
             <div className="flex items-baseline gap-2">
-              <span className="text-5xl font-black">R$12,70</span>
+              <span className="text-5xl font-black">R$19,90</span>
             </div>
             <p className="text-sm opacity-90 mt-1">Hoje, pagamento único</p>
           </div>
