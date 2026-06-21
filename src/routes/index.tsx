@@ -430,6 +430,62 @@ function Pricing({ onOpenOffer }: { onOpenOffer: () => void }) {
   );
 }
 
+function LightningOffer({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative w-full max-w-md rounded-3xl bg-card p-6 text-center shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
+          aria-label="Fechar"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <div className="flex items-center justify-center gap-2 text-primary">
+          <Clock className="h-6 w-6" />
+          <span className="text-lg font-black uppercase tracking-wide">ESPERE!</span>
+        </div>
+
+        <h3 className="mt-4 text-2xl font-black leading-tight">
+          Que tal levar o Plano Premium por um preço exclusivo?
+        </h3>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          Aproveite agora: leve o Plano Premium com{" "}
+          <strong className="text-foreground">+250 Dinâmicas + 6 bônus exclusivos</strong>{" "}
+          por apenas:
+        </p>
+
+        <p className="mt-4 text-sm text-muted-foreground line-through">De R$ 19,90</p>
+        <div className="mt-1 text-6xl font-black text-primary">R$10,00</div>
+
+        <a
+          href={CHECKOUT_LIGHTNING}
+          className="mt-6 block w-full rounded-full bg-primary py-4 text-lg font-black text-primary-foreground shadow-lg shadow-primary/30 hover:scale-[1.02] transition-transform"
+        >
+          QUERO O PLANO PREMIUM POR R$10,00
+        </a>
+
+        <button
+          onClick={onClose}
+          className="mt-4 text-sm text-muted-foreground underline hover:text-foreground"
+        >
+          Não, obrigado. Quero apenas o plano básico.
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Guarantee() {
   return (
     <section className="px-4 py-16 max-w-4xl mx-auto">
