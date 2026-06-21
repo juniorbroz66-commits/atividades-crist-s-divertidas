@@ -14,6 +14,8 @@ import {
   Check,
   Heart,
   ChevronDown,
+  Clock,
+  X,
 } from "lucide-react";
 import exemplo1 from "@/assets/exemplo-1.jpg";
 import exemplo2 from "@/assets/exemplo-2.jpg";
@@ -44,8 +46,10 @@ export const Route = createFileRoute("/")({
 
 const CHECKOUT_MAIN = "#oferta";
 const CHECKOUT_SECONDARY = "#oferta";
+const CHECKOUT_LIGHTNING = "#oferta";
 
 function Index() {
+  const [showOffer, setShowOffer] = useState(false);
   const today = new Date().toLocaleDateString("pt-BR");
 
   return (
@@ -56,12 +60,13 @@ function Index() {
       <Examples />
       <Benefits />
       <Bonuses />
-      <Pricing />
+      <Pricing onOpenOffer={() => setShowOffer(true)} />
       <Guarantee />
       <Testimonials />
       <About />
       <FAQ />
       <Footer />
+      {showOffer && <LightningOffer onClose={() => setShowOffer(false)} />}
     </div>
   );
 }
