@@ -27,17 +27,17 @@ import exemplo6 from "@/assets/exemplo-6.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "+ de 600 Dinâmicas e Atividades Cristã para Crianças" },
+      { title: "+ de 300 Dinâmicas e Atividades Cristã para Crianças" },
       {
         name: "description",
         content:
-          "Mais de 600 dinâmicas e atividades cristãs prontas para aplicar em EBD, salinha, cultinho infantil e eventos. Acesso digital vitalício.",
+          "Mais de 300 dinâmicas e atividades cristãs prontas para aplicar em EBD, salinha, cultinho infantil e eventos. Acesso digital vitalício.",
       },
-      { property: "og:title", content: "+ de 600 Dinâmicas e Atividades Cristã para Crianças" },
+      { property: "og:title", content: "+ de 300 Dinâmicas e Atividades Cristã para Crianças" },
       {
         property: "og:description",
         content:
-          "Material completo em PDF com mais de 600 dinâmicas cristãs para o ministério infantil. Oferta especial por R$ 5,50.",
+          "Material completo em PDF com mais de 300 dinâmicas cristãs para o ministério infantil. Oferta especial por R$ 5,50.",
       },
     ],
   }),
@@ -84,10 +84,10 @@ function Hero() {
     <section className="px-4 pt-10 pb-6 sm:pt-16 max-w-3xl mx-auto text-center">
       <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 shadow-sm mb-6">
         <Heart className="h-4 w-4 text-primary fill-primary" />
-        <span className="text-sm font-medium">Material Exclusivo para Ministério Infantil</span>
+        <span className="text-sm font-medium">Material Exclusivo </span>
       </div>
       <h1 className="text-4xl sm:text-6xl font-black leading-[1.05] tracking-tight">
-        + de 600 Dinâmicas e Atividades Cristã para Crianças
+        + de 300 Dinâmicas e Atividades Cristã para Crianças
       </h1>
       <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
         Atividades bíblicas, criativas e fáceis de aplicar na salinha, EBD, cultinho
@@ -98,7 +98,7 @@ function Hero() {
         <div className="aspect-[9/16] rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-gradient-to-br from-accent/30 to-primary/20 flex items-center justify-center">
           <div className="text-center px-6">
             <BookOpen className="h-16 w-16 mx-auto text-primary mb-4" />
-            <p className="font-bold text-lg">600+ Dinâmicas Cristãs</p>
+            <p className="font-bold text-lg">300+ Dinâmicas Cristãs</p>
             <p className="text-sm text-muted-foreground mt-2">Prontas para aplicar</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ function WhatYouGet() {
       icon: BookOpen,
       title: "Material Completo em PDF",
       bullets: [
-        "+600 Dinâmicas Cristãs pensadas para crianças",
+        "+300 Dinâmicas Cristãs pensadas para crianças",
         "Separadas por faixa etária, tema bíblico e tipo de encontro",
         "Tudo preparado — é só abrir, ler e aplicar na salinha",
       ],
@@ -237,7 +237,7 @@ function Examples() {
         Veja Alguns Exemplos do Material
       </h2>
       <p className="text-center text-muted-foreground mt-3 max-w-2xl mx-auto">
-        Confira algumas das +600 Dinâmicas prontas que você vai receber para usar nos seus
+        Confira algumas das +300 Dinâmicas prontas que você vai receber para usar nos seus
         encontros.
       </p>
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -394,7 +394,7 @@ function Pricing({ onOpenOffer }: { onOpenOffer: () => void }) {
 
           <ul className="mt-6 space-y-2.5 text-sm">
             {[
-              "+600 Dinâmicas Cristãs para Crianças",
+              "+300 Dinâmicas Cristãs para Crianças",
               "Atualizações Mensais & Acesso Vitalício",
               "Garantia de 30 Dias & Suporte no WhatsApp",
               "Brincadeiras e Atividades em Grupo",
