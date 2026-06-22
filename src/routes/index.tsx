@@ -115,19 +115,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="mt-10 mx-auto max-w-xs">
-        <div className="aspect-[9/16] rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-gradient-to-br from-accent/30 to-primary/20 flex items-center justify-center">
-          <div className="text-center px-6">
-            <BookOpen className="h-16 w-16 mx-auto text-primary mb-4" />
-            <p className="font-bold text-lg">300+ Dinâmicas Cristãs</p>
-            <p className="text-sm text-muted-foreground mt-2">Prontas para aplicar</p>
-          </div>
-        </div>
-      </div>
-
       <a
         href={CHECKOUT_MAIN}
-        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-bold text-base sm:text-lg shadow-lg shadow-primary/30 hover:scale-[1.02] transition-transform"
+        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-bold text-base sm:text-lg shadow-lg shadow-primary/30 hover:sc[...]
       >
         QUERO MEU MATERIAL AGORA
       </a>
