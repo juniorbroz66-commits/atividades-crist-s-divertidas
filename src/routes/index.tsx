@@ -584,7 +584,7 @@ function About() {
       <div className="mt-8 mx-auto h-28 w-28 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground">
         <Heart className="h-12 w-12 fill-current" />
       </div>
-      <h3 className="mt-4 text-xl font-bold">Vozes da Fé</h3>
+      <h3 className="mt-4 text-xl font-bold">Aventureiros da Fé</h3>
       <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
         Somos apaixonadas por ver crianças crescendo nos caminhos do Senhor desde cedo.
       </p>
@@ -638,7 +638,7 @@ function FAQ() {
 function Footer() {
   return (
     <footer className="px-4 py-10 border-t border-border mt-10 text-center text-xs text-muted-foreground">
-      <p>© {new Date().getFullYear()} Vozes da Fé — Todos os direitos reservados.</p>
+      <p>© {new Date().getFullYear()} Aventureiros da Fé — Todos os direitos reservados.</p>
       <p className="mt-2">Este produto não oferece nenhuma garantia de resultados e é destinado a fins educativos do ministério infantil cristão.</p>
     </footer>
   );
