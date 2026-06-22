@@ -96,6 +96,25 @@ function Hero() {
         infantil, culto no lar e programações da igreja.
       </p>
 
+      <div className="mt-10 mx-auto max-w-md w-full">
+        <div className="relative aspect-video rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-black">
+          <video
+            src={videoDinamicas.url}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            onContextMenu={(e) => e.preventDefault()}
+            aria-label="Vídeo de demonstração das dinâmicas cristãs para crianças"
+          />
+          <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
+        </div>
+      </div>
+
       <div className="mt-10 mx-auto max-w-xs">
         <div className="aspect-[9/16] rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-gradient-to-br from-accent/30 to-primary/20 flex items-center justify-center">
           <div className="text-center px-6">
