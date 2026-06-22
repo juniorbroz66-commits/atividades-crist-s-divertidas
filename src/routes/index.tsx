@@ -17,12 +17,14 @@ import {
   Clock,
   X,
 } from "lucide-react";
+import videoDinamicas from "@/assets/video-dinamicas.mp4.asset.json";
 import exemplo1 from "@/assets/exemplo-1.jpg";
 import exemplo2 from "@/assets/exemplo-2.jpg";
 import exemplo3 from "@/assets/exemplo-3.jpg";
 import exemplo4 from "@/assets/exemplo-4.jpg";
 import exemplo5 from "@/assets/exemplo-5.jpg";
 import exemplo6 from "@/assets/exemplo-6.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -93,6 +95,25 @@ function Hero() {
         Atividades bíblicas, criativas e fáceis de aplicar na salinha, EBD, cultinho
         infantil, culto no lar e programações da igreja.
       </p>
+
+      <div className="mt-10 mx-auto max-w-md w-full">
+        <div className="relative aspect-video rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-black">
+          <video
+            src={videoDinamicas.url}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            onContextMenu={(e) => e.preventDefault()}
+            aria-label="Vídeo de demonstração das dinâmicas cristãs para crianças"
+          />
+          <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
+        </div>
+      </div>
 
       <div className="mt-10 mx-auto max-w-xs">
         <div className="aspect-[9/16] rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-gradient-to-br from-accent/30 to-primary/20 flex items-center justify-center">
