@@ -96,11 +96,11 @@ function Hero() {
         infantil, culto no lar e programações da igreja.
       </p>
 
-      <div className="mt-10 mx-auto max-w-md w-full">
-        <div className="relative aspect-video rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-black">
+      <div className="mt-10 mx-auto w-full max-w-[260px] sm:max-w-[320px]">
+        <div className="relative aspect-[9/16] w-full rounded-3xl overflow-hidden border-4 border-card shadow-2xl bg-black">
           <video
             src={videoDinamicas.url}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="h-full w-full object-cover object-center"
             autoPlay
             muted
             loop
