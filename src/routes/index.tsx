@@ -54,10 +54,15 @@ function Index() {
   const [showOffer, setShowOffer] = useState(false);
   const today = new Date().toLocaleDateString("pt-BR");
 
+  const scrollToOfferta = () => {
+    const element = document.getElementById("oferta");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <TopBar today={today} />
-      <Hero />
+      <Hero onScrollToOfferta={scrollToOfferta} />
       <WhatYouGet />
       <Examples />
       <Benefits />
@@ -81,7 +86,7 @@ function TopBar({ today }: { today: string }) {
   );
 }
 
-function Hero() {
+function Hero({ onScrollToOfferta }: { onScrollToOfferta: () => void }) {
   return (
     <section className="px-4 pt-10 pb-6 sm:pt-16 max-w-3xl mx-auto text-center">
       <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 shadow-sm mb-6">
@@ -115,12 +120,12 @@ function Hero() {
         </div>
       </div>
 
-      <a
-        href={CHECKOUT_MAIN}
-        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-bold text-base sm:text-lg shadow-lg shadow-primary/30 hover:sc[...]
+      <button
+        onClick={onScrollToOfferta}
+        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-bold text-base sm:text-lg shadow-lg shadow-primary/30 hover:scale-[1.02] transition-transform"
       >
         QUERO MEU MATERIAL AGORA
-      </a>
+      </button>
     </section>
   );
 }
