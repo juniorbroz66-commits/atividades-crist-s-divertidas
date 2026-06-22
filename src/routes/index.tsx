@@ -44,9 +44,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const CHECKOUT_MAIN = "#oferta";
-const CHECKOUT_SECONDARY = "#oferta";
-const CHECKOUT_LIGHTNING = "#oferta";
+const CHECKOUT_MAIN = "www.checkoutoferta1.com";
+const CHECKOUT_SECONDARY = "www.checkoutoferta2.com";
+const CHECKOUT_LIGHTNING = "www.checkoutoferta3.com";
 
 function Index() {
   const [showOffer, setShowOffer] = useState(false);
